@@ -27,19 +27,27 @@ Run on: New Terminal 2 window
 5. cd nd013-c5-planning-starter/project
 6 ./install-ubuntu.sh
 7. cd starter_files/
-8. git clone https://github.com/anthonymiglio/nd013-c4-motion-planning-and-decision-making.git
-9. cmake .
-10. make
-11. cd .. // cd nd013-c5-planning-starter/project
-12. ./run_main.sh // This will silently fail 
-13. ctrl + C // to stop 
-14. ./run_main.sh // run this again
-15. Go to desktop mode to see CARLA
+8. cmake .
+9. make
+10. cd .. // cd nd013-c5-planning-starter/project
+11. ./run_main.sh // This will silently fail 
+12. ctrl + C // to stop 
+13. ./run_main.sh // run this again
+14. Go to desktop mode to see CARLA
 
 // If error bind is already in use, or address already being used
 ps -aux | grep carla
 kill id
 ```
+
+The implementations are on this GitHub Repository, on the files below inside the folder:
+``https://github.com/anthonymiglio/nd013-c4-motion-planning-and-decision-making/tree/main/project/starter_files/``
+* ``behavior_planner_FSM.cpp``
+* ``cost_functions.cpp``
+* ``motion_planner.cpp``
+* ``planning_params.h``
+* ``velocity_profile_generator.cpp``
+
 
 The simulation on the CARLA platform shows that the ego vehicle can deviate from the three cars parked in the middle of the road and roadside and turn smoothly. Behavioral Planning makes the Follow Lane and Change Lane Left or Change Lane Right states. Then, the cubic spirals method, according ``plannig_param.h`` file, creates trajectories as the Number of paths parameter with the Number of points in the spiral, big enough to smooth the curve and diminish jerk. The selected motion trajectory for the ego vehicle is the one with the lower cost.
 
