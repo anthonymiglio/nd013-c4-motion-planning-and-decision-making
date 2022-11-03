@@ -12,7 +12,7 @@ In this project, the implementation of two of the main components of a tradition
 * Path and trajectory generation using cubic spirals
 * Best trajectory selection though a cost function evaluation. This cost function will mainly perform a collision check and a proximity check to bring cost higher as we get closer or collide with objects but maintaining a bias to stay closer to the lane center line.
 
-To run this project in the workspace folder: 
+## To run this project in the workspace folder: 
 
 Run on: New Terminal 1 window
 ```
